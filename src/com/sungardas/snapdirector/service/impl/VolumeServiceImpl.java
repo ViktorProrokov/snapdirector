@@ -61,11 +61,10 @@ public class VolumeServiceImpl implements VolumeService {
         amazonEC2.setRegion(region);
         Set<VolumeDto> volumes = getVolumes(amazonEC2);
         return volumes;
-
     }
 
     @Override
-    public boolean isExists(String volumeId) {
+    public boolean volumeExists(String volumeId) {
         for(VolumeDto dto: getVolumes()){
             if(dto.getVolumeId().equals(volumeId)){
                 return true;
